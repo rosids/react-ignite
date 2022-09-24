@@ -4,12 +4,6 @@
   gap: 1rem;
 }
 
-.comment > img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 8px;
-}
-
 .commentBox {
   /* estica o máximo possível do tamanho, isso se aplica quando o elemento é filho de um elemento com display flex */
   flex: 1;
