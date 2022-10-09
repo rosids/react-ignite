@@ -60,3 +60,29 @@ export const HistoryList = styled.div`
     }
   }
 `
+
+const STATUS_COLORS = {
+  yellow: 'yellow-500',
+  green: 'green-500',
+  red: 'red-500',
+} as const
+// esse as const fala que o valor das propriedades do objeto STATUS_COLORS só pode ser yellow-500, green-500 e red-500. Sem isso, o typescript interpreta que o valor das propriedades pode ser qualquer string.
+
+interface StatusProps {
+  // diz que as chaves do objeto STATUS_COLORS são os valores possíveis para statusColor
+  statusColor: keyof typeof STATUS_COLORS
+}
+
+export const Status = styled.span<StatusProps>`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
+  }
+`
