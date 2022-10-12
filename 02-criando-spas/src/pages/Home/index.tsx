@@ -21,13 +21,24 @@ const newCycleFormValidationSchema = zod.object({
     .max(60, 'O ciclo precisa ser de no máximo 60 minutos.'),
 })
 
-export function Home() {
-  const { register, handleSubmit, watch, formState } = useForm({
-    resolver: zodResolver(newCycleFormValidationSchema),
-  })
-  console.log(formState.errors)
+// interface NewCycleFormData {
+//   task: string
+//   minutesAmount: number
+// }
+// A tipagem pode ser feita tanto pela interface(acima) como por inferência(abaixo)
+// typescript não entende variáveis javascript por isso é utilizado o typeof antes do objeto para converter em uma tipagem, algo específico do typescript
+type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
-  function handleCreateNewCycle(data) {}
+export function Home() {
+  const { register, handleSubmit, watch } = useForm<NewCycleFormData>({
+    resolver: zodResolver(newCycleFormValidationSchema),
+    defaultValues: {
+      task: '',
+      minutesAmount: 0,
+    },
+  })
+
+  function handleCreateNewCycle(data: NewCycleFormData) {}
 
   const task = watch('task')
   const isSubmitDisabled = !task
