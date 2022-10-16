@@ -69,8 +69,6 @@ export function CyclesContextProvider({
     setCycles((state) => [...state, newCycle])
     setActiveCycleId(id)
     setAmountSecondsPassed(0)
-
-    // reset() // restaura os campos do formulários para os valores definidos no defaultValues acima
   }
 
   function interruptCurrentCycle() {
