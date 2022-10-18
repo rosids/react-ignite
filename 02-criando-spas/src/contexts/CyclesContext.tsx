@@ -53,6 +53,11 @@ export function CyclesContextProvider({
       if (storedStateAsJSON) {
         return JSON.parse(storedStateAsJSON)
       }
+
+      return {
+        cycles: [],
+        activeCycleId: null,
+      }
     }, // função é disparada assim que o reducer for criado para recuperar os dados iniciais do reducer de algum outro lugar
   )
 
