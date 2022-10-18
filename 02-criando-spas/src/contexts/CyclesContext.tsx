@@ -1,17 +1,9 @@
 import { createContext, ReactNode, useReducer, useState } from 'react'
+import { ActionTypes, Cycle, cyclesReducer } from '../reducers/cycles'
 
 interface CreateCycleData {
   task: string
   minutesAmount: number
-}
-
-interface Cycle {
-  id: string
-  task: string
-  minutesAmount: number
-  startDate: Date
-  interruptedDate?: Date
-  finishedDate?: Date
 }
 
 interface CyclesContextType {
@@ -31,55 +23,14 @@ interface CyclesContextProviderProps {
   children: ReactNode
 }
 
-interface CycleState {
-  cycles: Cycle[]
-  activeCycleId: string | null
-}
-
 export function CyclesContextProvider({
   children,
 }: CyclesContextProviderProps) {
   // useReducer é utilizado quando existe um estado complexo, ou seja, armazena informações complexas dentro de um estado. E essas informações precisam mudar constantemente com alterações provindas de várias fontes diferentes, de vários componentes diferentes. O ciclo desta aplicação é um exemplo disso.
-  const [cyclesState, dispatch] = useReducer(
-    (state: CycleState, action: any) => {
-      // o retorno dessa função sempre é o novo valor que este estado vai receber sempre que uma action for disparada
-      switch (action.type) {
-        case 'ADD_NEW_CYCLE':
-          return {
-            ...state,
-            cycles: [...state.cycles, action.payload.newCycle],
-            activeCycleId: action.payload.newCycle.id,
-          }
-        case 'INTERRUPT_CURRENT_CYCLE':
-          return {
-            ...state,
-            cycles: state.cycles.map((cycle) => {
-              if (cycle.id === state.activeCycleId) {
-                return { ...cycle, interruptedDate: new Date() }
-              } else {
-                return cycle
-              }
-            }),
-            activeCycleId: null,
-          }
-        case 'MARK_CURRENT_CYCLE_AS_FINISHED':
-          return {
-            ...state,
-            cycles: state.cycles.map((cycle) => {
-              if (cycle.id === state.activeCycleId) {
-                return { ...cycle, finishedDate: new Date() }
-              } else {
-                return cycle
-              }
-            }),
-            activeCycleId: null,
-          }
-        default:
-          return state
-      }
-    },
-    { cycles: [], activeCycleId: null }, // o segundo parâmetro do useReducer é o valor inicial do estado
-  )
+  const [cyclesState, dispatch] = useReducer(cyclesReducer, {
+    cycles: [],
+    activeCycleId: null,
+  }) // o segundo parâmetro do useReducer é o valor inicial do estado
 
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
 
@@ -92,7 +43,7 @@ export function CyclesContextProvider({
 
   function markCurrentCycleAsFinished() {
     dispatch({
-      type: 'MARK_CURRENT_CYCLE_AS_FINISHED',
+      type: ActionTypes.MARK_CURRENT_CYCLE_AS_FINISHED,
       payload: {
         activeCycleId,
       },
@@ -110,7 +61,7 @@ export function CyclesContextProvider({
     }
 
     dispatch({
-      type: 'ADD_NEW_CYCLE',
+      type: ActionTypes.ADD_NEW_CYCLE,
       payload: {
         newCycle,
       },
@@ -121,7 +72,7 @@ export function CyclesContextProvider({
 
   function interruptCurrentCycle() {
     dispatch({
-      type: 'INTERRUPT_CURRENT_CYCLE',
+      type: ActionTypes.INTERRUPT_CURRENT_CYCLE,
       payload: {
         activeCycleId,
       },
