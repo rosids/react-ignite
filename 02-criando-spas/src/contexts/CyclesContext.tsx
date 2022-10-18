@@ -1,6 +1,11 @@
-import { createContext, ReactNode, useReducer, useState } from 'react'
 import {
-  ActionTypes,
+  createContext,
+  ReactNode,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react'
+import {
   addNewCycleAction,
   interruptCurrentCycleAction,
   markCurrentCycleAsFinishedAction,
@@ -33,12 +38,30 @@ export function CyclesContextProvider({
   children,
 }: CyclesContextProviderProps) {
   // useReducer é utilizado quando existe um estado complexo, ou seja, armazena informações complexas dentro de um estado. E essas informações precisam mudar constantemente com alterações provindas de várias fontes diferentes, de vários componentes diferentes. O ciclo desta aplicação é um exemplo disso.
-  const [cyclesState, dispatch] = useReducer(cyclesReducer, {
-    cycles: [],
-    activeCycleId: null,
-  }) // o segundo parâmetro do useReducer é o valor inicial do estado
+  const [cyclesState, dispatch] = useReducer(
+    cyclesReducer,
+    {
+      cycles: [],
+      activeCycleId: null,
+    }, // o segundo parâmetro do useReducer é o valor inicial do estado
+    () => {
+      const storedStateAsJSON = localStorage.getItem(
+        '@ignite-timer:cycles-state-1.0.0',
+      )
+      if (storedStateAsJSON) {
+        return JSON.parse(storedStateAsJSON)
+      }
+    }, // função é disparada assim que o reducer for criado para recuperar os dados iniciais do reducer de algum outro lugar
+  )
 
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(cyclesState)
+
+    // um bom nome para as variáveis do localStorage é ter o @nome_aplicação:nome_variável-versão_aplicação
+    localStorage.setItem('@ignite-timer:cycles-state-1.0.0', stateJSON)
+  }, [cyclesState])
 
   const { cycles, activeCycleId } = cyclesState
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
