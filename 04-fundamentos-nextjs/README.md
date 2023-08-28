@@ -14,7 +14,7 @@
 - [x] Cabeçalho da aplicação
 - [x] Imagens no Next.js
 - [x] Estrutura da Home
-- [ ] Criando carrossel
+- [x] Criando carrossel
 
 ### Integração com Stripe
 
