@@ -4,7 +4,7 @@
 
 - [x] Conceitos do Next.js
 - [x] Criando projeto com Next.js
-- [ ] Criando rotas da aplicação
+- [x] Criando rotas da aplicação
 - [ ] Configurando documento HTML
 
 ### Estrutura visual
