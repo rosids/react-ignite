@@ -13,7 +13,7 @@
 - [x] Estilos globais
 - [x] Cabeçalho da aplicação
 - [x] Imagens no Next.js
-- [ ] Estrutura da Home
+- [x] Estrutura da Home
 - [ ] Criando carrossel
 
 ### Integração com Stripe
