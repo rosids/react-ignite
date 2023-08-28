@@ -11,7 +11,7 @@
 
 - [x] Configurando Stitches
 - [x] Estilos globais
-- [ ] Cabeçalho da aplicação
+- [x] Cabeçalho da aplicação
 - [ ] Imagens no Next.js
 - [ ] Estrutura da Home
 - [ ] Criando carrossel
