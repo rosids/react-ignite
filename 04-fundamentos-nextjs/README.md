@@ -9,7 +9,7 @@
 
 ### Estrutura visual
 
-- [ ] Configurando Stitches
+- [x] Configurando Stitches
 - [ ] Estilos globais
 - [ ] Cabeçalho da aplicação
 - [ ] Imagens no Next.js
