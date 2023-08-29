@@ -18,7 +18,7 @@
 
 ### Integração com Stripe
 
-- [ ] Configurando conta Stripe
+- [x] Configurando conta Stripe
 - [ ] Data Fetching no Next.js
 - [ ] Buscando produtos do Stripe
 - [ ] Utilizando SSG
