@@ -26,7 +26,7 @@
 
 ### Produto & Checkout
 
-- [ ] Navegação via Link
+- [x] [Navegação via Link](https://rosiele-david.notion.site/Navega-o-via-Link-7a07a7fea51842f0aabfc53329b4cfea?pvs=4)
 - [ ] Estrutura da página de produto
 - [ ] Carregando dados do produto
 - [ ] SSG com parâmetro dinâmico
