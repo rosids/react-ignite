@@ -29,7 +29,7 @@
 - [x] [Navegação via Link](https://rosiele-david.notion.site/Navega-o-via-Link-7a07a7fea51842f0aabfc53329b4cfea?pvs=4)
 - [x] Estrutura da página de produto
 - [x] Carregando dados do produto
-- [ ] SSG com parâmetro dinâmico
+- [x] [SSG com parâmetro dinâmico](https://rosiele-david.notion.site/SSG-com-par-metro-din-mico-ecf0894b88bc498081ecbc3f2a9a09a1?pvs=4)
 - [ ] Fallback do SSG
 - [ ] Prefetch de links
 - [ ] API routes no Next.js

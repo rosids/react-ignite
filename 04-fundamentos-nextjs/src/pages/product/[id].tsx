@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import Stripe from "stripe"
 import Image from "next/image"
 
@@ -35,6 +35,15 @@ export default function Product({ product }: ProductProps) {
       </ProductDetails>
     </ProductContainer>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { id: 'prod_OXVIxRWWUH6tkv' } }
+    ],
+    fallback: false,
+  }
 }
 
 // any, primeiro parâmetro, seria a tipagem do retorno da função
