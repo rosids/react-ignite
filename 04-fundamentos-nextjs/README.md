@@ -20,7 +20,7 @@
 
 - [x] Configurando conta Stripe
 - [x] [Data Fetching no Next.js](https://rosiele-david.notion.site/Data-Fetching-no-Next-js-191c0a77e65f4313a46b789534bd78a0?pvs=4)
-- [ ] Buscando produtos do Stripe
+- [x] Buscando produtos do Stripe
 - [ ] Utilizando SSG
 - [ ] Formatando preço
 
