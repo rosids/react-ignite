@@ -31,7 +31,7 @@
 - [x] Carregando dados do produto
 - [x] [SSG com parâmetro dinâmico](https://rosiele-david.notion.site/SSG-com-par-metro-din-mico-ecf0894b88bc498081ecbc3f2a9a09a1?pvs=4)
 - [x] Fallback do SSG
-- [ ] Prefetch de links
+- [x] Prefetch de links
 - [ ] API routes no Next.js
 - [ ] Checkout no Stripe
 - [ ] Botão de comprar
