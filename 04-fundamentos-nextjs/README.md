@@ -34,7 +34,7 @@
 - [x] Prefetch de links
 - [x] [API routes no Next.js](https://rosiele-david.notion.site/API-routes-no-Next-js-109a81ee692243ffbe5c5019f7232261?pvs=4)
 - [x] Checkout no Stripe
-- [ ] Botão de comprar
+- [x] Botão de comprar
 - [ ] Estrutura de sucesso
 - [ ] Dados da compra no sucesso
 - [ ] Redirect no SSR
