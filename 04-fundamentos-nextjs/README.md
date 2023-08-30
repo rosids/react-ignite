@@ -32,7 +32,7 @@
 - [x] [SSG com parâmetro dinâmico](https://rosiele-david.notion.site/SSG-com-par-metro-din-mico-ecf0894b88bc498081ecbc3f2a9a09a1?pvs=4)
 - [x] Fallback do SSG
 - [x] Prefetch de links
-- [ ] API routes no Next.js
+- [x] [API routes no Next.js](https://rosiele-david.notion.site/API-routes-no-Next-js-109a81ee692243ffbe5c5019f7232261?pvs=4)
 - [ ] Checkout no Stripe
 - [ ] Botão de comprar
 - [ ] Estrutura de sucesso
