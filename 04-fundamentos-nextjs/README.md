@@ -36,6 +36,6 @@
 - [x] Checkout no Stripe
 - [x] Botão de comprar
 - [x] Estrutura de sucesso
-- [ ] Dados da compra no sucesso
+- [x] Dados da compra no sucesso
 - [ ] Redirect no SSR
 - [ ] Trabalhando com SEO
