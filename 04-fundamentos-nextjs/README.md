@@ -1,3 +1,5 @@
+São 04:17:34 em 28 aulas.
+
 **Desenvolvido utilizando o node v18.16.1**
 
 ### Fundamentos do Next.js
