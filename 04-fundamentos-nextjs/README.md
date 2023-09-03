@@ -37,5 +37,5 @@
 - [x] Botão de comprar
 - [x] Estrutura de sucesso
 - [x] Dados da compra no sucesso
-- [ ] Redirect no SSR
+- [x] Redirect no SSR
 - [ ] Trabalhando com SEO
