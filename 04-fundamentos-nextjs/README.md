@@ -38,4 +38,4 @@
 - [x] Estrutura de sucesso
 - [x] Dados da compra no sucesso
 - [x] Redirect no SSR
-- [ ] Trabalhando com SEO
+- [x] Trabalhando com SEO
